@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html>
+ <head>
+   <meta charset="UTF-8">
+   <title>Hello There Buddy</title>
+   <link href="style.css" rel="stylesheet" type="text/css" />
+ </head>
+ <body>
+   <header>
+     <h1 id = "HelloThereBuddy">Hello There Buddy</h1>
+     <p id = "uhIDontKnow" onclick = "secret()">Click The Start Button to start.</p>
+     <!-- You're looking at the source code! That's nice, but remember: The game is more fun if you don't cheat by looking at this code. -->
+     <!-- Also, this game is a great example of JavaScript's logic and how it can be used. Feel free to use this code as references for other use! -->
+
+		 <!-- 
+			 DISCLAIMER: 
+			 I was in 6th grade when I made this. 
+			 Do not take the comments, code, or anything else in this project seriously. 
+			 This comment is not original to the project. 
+		 -->
+   </header>
+   <main>
+     <div>
+       <button id = "Start" onclick = "StartF()">Start</button>
+       <button id = "TheStartButton" onclick = "StartButtonF()">The Start Button</button>
+     </div>
+     <div>
+       <br />
+       <button id = "TheQuiz" onclick = "TheQuiz()">The Quiz</button>
+       <button id = "Quiz" onclick = "QuizF()">Quiz</button>
+     </div>
+     <div>
+       <br />
+       <p id = "whyme" onclick = "NeonFox189()"></p>
+       <button id = "thebutton" onclick = "thebutton()">The Button</button>
+       <p id = "meFamous" onclick = "oohLook()"></p>
+     </div>
+     <div>
+       <br />
+       <button id = "thetest" onclick = "thetest()">The Test.</button>
+     </div>
+   </main>
+   <footer>
+     <p>Thanks to Aidan W. Zhong for inspiring me to make this Repl, and for coding references.<br />Thanks to <a href = "https://www.w3schools.com/" target = "_blank">W3Schools</a> for guiding me with coding concepts.</p>
+   </footer>
+   <script>
+var smarts = null;
+var answer = null;
+var pass = null;
+var secretphase = null;
+
+document.getElementById("TheQuiz").style.display = "none";
+document.getElementById("Quiz").style.display = "none";
+document.getElementById("whyme").style.display = "none";
+document.getElementById("thebutton").style.display = "none";
+document.getElementById("meFamous").style.display = "none";
+document.getElementById("thetest").style.display = "none";
+document.getElementById("TheStartButton").style.display = "block";
+alert("There are 3 modes in this game.");
+alert("There are Easy, Medium, and Hard mode.");
+smarts = prompt("What mode do you choose?");
+if (smarts == "Easy" || smarts == "easy") {
+ alert("Entering Easy mode...");
+ smarts = 1;
+} else {
+ if (smarts == "Medium" || smarts == "medium") {
+   alert("Entering Medium mode...");
+   smarts = 2;
+ } else {
+   if (smarts == "Hard" || smarts == "hard") {
+     alert("Entering Hard mode...");
+     smarts = 3;
+   } else {
+     alert("Looks like you're too dumb to answer a simple question.");
+     alert("Entering dumb mode...");
+     smarts = 0;
+   }
+ }
+}
+
+function StartF() {
+ switch(smarts) {
+   case 0:
+     alert("Great job!!!");
+     alert("You clicked the Start button!");
+     alert("There is a quiz you will take.");
+     alert("But don't worry, I believe in you.");
+     alert("It is hard.");
+     alert("But let me give you a hint: The answer to question 1 is 'ready'. Okay?");
+     alert("Also, the answer to question 2 is 'aware'. Okay?");
+     alert("Be aware of answers, okay?");
+     document.getElementById("TheQuiz").style.display = "block";
+     break;
+   case 1:
+     alert("There is a quiz you will have to take.");
+     alert("It is hard. You must be ready.");
+     alert("You have to be aware of answers.");
+     alert("When you are ready, click The Quiz.");
+     document.getElementById("TheQuiz").style.display = "block";
+     break;
+   case 2:
+     alert("I expect more of you.");
+     break;
+   case 3:
+     alert("You have failed already.");
+     alert("You must restart.");
+     failed();
+     break;
+   default:
+     errorOccured();
+     break;
+ }
+}
+
+function StartButtonF() {
+ switch(smarts) {
+   case 0:
+     alert("Great job!!!");
+     alert("You clicked the Start Button!");
+     alert("There is a quiz you will take.");
+     alert("But don't worry, I believe in you.");
+     alert("It is hard.");
+     alert("But let me give you a hint: The answer to question 1 is 'ready'. Okay?");
+     alert("Also, the answer to question 2 is 'aware'. Okay?");
+     alert("Be aware of answers, okay?");
+     document.getElementById("TheQuiz").style.display = "block";
+     break;
+   case 1:
+     alert("There is a quiz you will have to take.");
+     alert("It is hard. You must be ready.");
+     alert("You have to be aware of answers.");
+     alert("When you are ready, click The Quiz.");
+     document.getElementById("TheQuiz").style.display = "block";
+     break;
+   case 2:
+     alert("There is a hard quiz you will take.");
+     alert("You must be ready.");
+     alert("You have to be aware of answers.");
+     alert("Click The Quiz.");
+     document.getElementById("TheQuiz").style.display = "block";
+     document.getElementById("Quiz").style.display = "block";
+     break;
+   case 3:
+     alert("There is a quiz you will take.");
+     alert("You must be ready.");
+     alert("Be aware.");
+     alert("Start The Quiz.");
+     document.getElementById("TheQuiz").style.display = "block";
+     document.getElementById("Quiz").style.display = "block";
+     break;
+   default:
+     errorOccured();
+     break;
+ }
+}
+
+function failed() {
+ window.close();
+}
+
+function errorOccured() {
+ alert("An error occured.");
+ alert("This site will now close.");
+ failed();
+}
+
+function secret() {
+ alert("You have found the secret.");
+ alert("The secret contains 2 facts.");
+ alert("You must remember these.");
+ alert("Code Aaa: Imma climb yo tower in less than an hour");
+ alert("Credits to Andrew Zhong for that phrase.");
+ alert("Code Aab: You need to lighten up with a curse you shall not pass");
+ alert("Credits to Aidan Zhong for that phrase.");
+}
+
+function TheQuiz() {
+ answer = prompt("What must you be?");
+ switch(smarts) {
+   case 0:
+     if (answer == "Ready" || answer == "ready") {
+       alert("Yay!!!");
+       alert("You got that correct!!!");
+       pass = 1;
+     } else {
+       alert("Don't worry if you got that wrong.");
+       alert("You can always improve!");
+       pass = 1;
+     }
+     break;
+   case 1:
+     if (answer == "Ready" || answer == "ready") {
+       alert("Correct.");
+       pass = 1;
+     } else {
+       alert("Wrong!");
+       pass = 1;
+     }
+     break;
+   case 2:
+     if (answer == "ready") {
+       alert("Pass.");
+       pass = 1;
+     } else {
+       alert("Wrong. Restart.");
+       pass = 0;
+     }
+     break;
+   case 3:
+     if (answer == "ready") {
+       alert("Pass.");
+       pass = 1;
+     } else {
+       alert("Fail. Restart.");
+       failed();
+       pass = 0;
+     }
+     break;
+   default:
+     errorOccured();
+     break;
+ }
+ if (pass == 1) {
+   answer = prompt("What do you have to be?");
+   switch(smarts) {
+     case 0:
+       if (answer == "Aware" || answer == "aware") {
+         alert("Hooray!!!");
+         alert("You are very good at this.");
+         pass = 1;
+       } else {
+         alert("Don't worry.");
+         alert("You can always try again!");
+         alert("I believe in you!");
+         pass = 1;
+       }
+       break;
+     case 1:
+       if (answer == "Aware" || answer == "aware") {
+         alert("Correct!");
+         pass = 1;
+       } else {
+         alert("Wrong!");
+         pass = 1;
+       }
+       break;
+     case 2:
+       if (answer == "aware") {
+         alert("Pass.");
+         pass = 1;
+       } else {
+         alert("Wrong. Restart.");
+         pass = 0;
+       }
+       break;
+     case 3:
+       if (answer == "aware") {
+         alert("Pass.");
+         pass = 1;
+       } else {
+         alert("Fail. Restart.");
+         failed();
+         pass = 0;
+       }
+       break;
+     default:
+       errorOccured();
+       break;
+   }
+   if (pass == 1) {
+     if (smarts != 0) {
+       answer = prompt("Enter Code Aaa.");
+       switch(smarts) {
+         case 1:
+           if (answer == "Imma climb yo tower in less than an hour" || answer == "imma climb yo tower in less than an hour") {
+             alert("Correct!!!");
+             alert("I can't believe you actually got that correct!");
+             pass = 1;
+           } else {
+             alert("Wrong.");
+             pass = 1;
+           }
+           break;
+         case 2:
+           if (answer == "Imma climb yo tower in less than an hour") {
+             alert("Pass.");
+             pass = 1;
+           } else {
+             alert("Wrong. Restart.");
+             pass = 0;
+           }
+           break;
+         case 3:
+           if (answer == "Imma climb yo tower in less than an hour") {
+             alert("Pass.");
+             pass = 1;
+           } else {
+             alert("Fail. Restart.");
+             failed();
+             pass = 0;
+           }
+           break;
+         default:
+           errorOccured();
+           break;
+       }
+       if (pass == 1) {
+         answer = prompt("Enter Code Aab.");
+       switch(smarts) {
+         case 1:
+           if (answer == "You need to lighten up with a curse you shall not pass" || answer == "you need to lighten up with a curse you shall not pass") {
+             alert("Correct!!!");
+             alert("I can't believe you actually got that correct!");
+             pass = 1;
+           } else {
+             alert("Wrong.");
+             pass = 1;
+           }
+           break;
+         case 2:
+           if (answer == "You need to lighten up with a curse you shall not pass") {
+             alert("Pass.");
+             pass = 1;
+           } else {
+             alert("Wrong. Restart.");
+             pass = 0;
+           }
+           break;
+         case 3:
+           if (answer == "You need to lighten up with a curse you shall not pass") {
+             alert("Pass.");
+             pass = 1;
+           } else {
+             alert("Fail. Restart.");
+             failed();
+             pass = 0;
+           }
+           break;
+         default:
+           errorOccured();
+           break;
+       }
+       }
+       if (pass == 1) {
+         alert("You have passed the quiz.");
+         document.getElementById("whyme").style.display = "block";
+         document.getElementById("thebutton").style.display = "block";
+         document.getElementById("meFamous").style.display = "block";
+       }
+     } else {
+       alert("Hooray! You went through all the questions!!!");
+       alert("Yippee!!!");
+       document.getElementById("whyme").style.display = "block";
+       document.getElementById("thebutton").style.display = "block";
+       document.getElementById("meFamous").style.display = "block";
+       document.getElementById("whyme").style.display = "            ";
+     }
+   }
+ }
+}
+
+function QuizF() {
+ switch(smarts) {
+   case 2:
+     alert("You dummy this isn't the correct quiz.");
+     alert("You know better than that.");
+     failed();
+     break;
+   case 3:
+     alert("Fail.");
+     failed();
+     break;
+   default:
+     errorOccured();
+     break;
+ }
+}
+
+function thebutton() {
+ document.getElementById("meFamous").innerHTML = "You clicked the button. Now go ahead and start the test.";
+ document.getElementById("thetest").style.display = "block";
+}
+
+function oohLook() {
+ alert("Click the test to get this done.");
+ alert("To yeet you must yeet.");
+}
+
+function NeonFox189() {
+ alert("The answer to the second to last question is 'The Last Calling'.");
+ alert("The answer to the last question is 'NeonFox189'.");
+}
+
+function thetest() {
+ if (smarts >= 2) {
+   answer = prompt("What did you click?");
+   if (answer == "the button") {
+     alert("Pass.");
+     pass = 1;
+   } else {
+     failed();
+     pass = 0;
+   }
+   if (pass == 1) {
+     answer = prompt("What must you click to get this done?");
+     if (answer == "the test") {
+       alert("Pass.");
+       pass = 1;
+     } else {
+       failed();
+       pass = 0;
+     }
+     if (pass == 1) {
+       answer = prompt("What must you do in order to yeet?");
+       if (answer == "yeet") {
+         alert("Pass.");
+         pass = 1;
+       } else {
+         failed();
+         pass = 0;
+       }
+       if (pass == 1) {
+         answer = prompt("Question 4.");
+         if (answer == "The Last Calling") {
+           alert("Pass.");
+           pass = 1;
+         } else {
+           failed();
+           pass = 0;
+         }
+         answer = prompt("Question 5.");
+         if (answer == "NeonFox189") {
+           alert("Pass.");
+           pass = 1;
+         } else {
+           failed();
+           pass = 0;
+         }
+         if (pass == 1) {
+           alert("Dang, you actually made through all of that?  ") ;
+           alert("That's impressive.");
+           alert("This is the end, but don't get out yet.");
+           answer = prompt("Type in 'Yeeto Truck'.");
+           if (answer == "in 'Yeeto Truck'.") {
+             alert("Wow.");
+             alert("You didn't fall for the trick.");
+             alert("Nice Job.");
+           } else {
+             alert("Hah you got trolled son.");
+             failed();
+           }
+         }
+       }
+     }
+   }
+ } else {
+   alert("Actually, we decided the test is too hard for you.");
+   alert("Now go along and do the work you were supposed to do.");
+   alert("Bye!!");
+ }
+}
+
+</script>
+ </body>
+</html>
